@@ -9,4 +9,12 @@ class Task(models.Model):
 
     def __str__(self):
         return f'{self.id}. {self.title} - {self.status}'
+
+    def to_json(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'description': self.description,
+            'status': self.status
+        }
     
